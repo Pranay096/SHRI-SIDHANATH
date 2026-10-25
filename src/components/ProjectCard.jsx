@@ -2,16 +2,13 @@ import './ProjectCard.css';
 import ProjectRegistration from './ProjectRegistration';
 
 /**
- * One project, as a card: photograph (or a typographic plate where there is no
- * photograph), then name, starting price and location. Shared by the homepage
- * shortlist and the projects page, so the two never drift apart.
+ * One project, as a card: a full-bleed marketing render with a gradient overlay,
+ * the project name as headline, the `detail` field as a tagline, and developer
+ * branding at the bottom — matching the developer marketing style the client uses.
  *
- * The card opens the property's own detail panel (`onOpen`) rather than
- * jumping to the enquiry form directly — browsing and enquiring are two
- * different things, and the enquiry form is one tap away inside the panel.
+ * Falls back to a typographic plate when no image is available.
  *
- * Only what the content layer records is shown — a missing price or
- * configuration is simply absent, never filled in.
+ * Shared by the homepage shortlist and the projects page.
  */
 export default function ProjectCard({ project: p, onOpen }) {
   const meta = [p.area, p.config].filter(Boolean).join(' · ');
@@ -21,15 +18,29 @@ export default function ProjectCard({ project: p, onOpen }) {
     <button type="button" className="pcard" onClick={() => onOpen(p)} data-tilt="6" aria-label={`View details for ${p.name}`}>
       <span className="pcard__media">
         {p.image ? (
-          <img src={p.image} alt={p.imageAlt} width="560" height="700" loading="lazy" />
+          <>
+            <img src={p.image} alt={p.imageAlt ?? p.name} width="560" height="700" loading="lazy" />
+            {/* Marketing overlay: gradient + headline + developer strip */}
+            <span className="pcard__overlay" aria-hidden="true">
+              <span className="pcard__overlay-top">
+                <span className="pcard__headline">{p.name}</span>
+              </span>
+              <span className="pcard__overlay-bottom">
+                <span className="pcard__dev-brand">
+                  <img src="/images/branding/logo-mark-trimmed.png" alt="" width="28" height="15" />
+                  <span className="pcard__dev-name">{p.developer || p.area}</span>
+                </span>
+                {p.area && <span className="pcard__location">{p.area}</span>}
+              </span>
+            </span>
+          </>
         ) : (
           <span className="pcard__plate">
             <img src="/images/branding/logo-mark-trimmed.png" alt="" width="52" height="28" />
             <span className="h4">{p.developer || p.area}</span>
           </span>
         )}
-        {p.category && <span className="pcard__tag mono-sm">{p.category}</span>}
-        {p.imageCredit && <span className="pcard__credit mono-sm">Illustration: {p.imageCredit}</span>}
+        {p.imageCredit && <span className="pcard__credit mono-sm">Illus: {p.imageCredit}</span>}
         <span className="pcard__enquire mono-sm" aria-hidden="true">
           View details &rarr;
         </span>

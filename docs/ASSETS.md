@@ -79,39 +79,36 @@ photography when it exists.
 
 ---
 
-## ⚠ Project imagery is PLACEHOLDER. Do not launch with it.
+## ✅ Project imagery — placeholder images replaced (2026-10-25)
 
-Six projects currently carry a building image:
+All six formerly-placeholder portfolio images have been replaced with official developer artwork
+sourced from each developer's own website. Five previously image-less projects now have images.
 
-| Project | File | Source |
-|---|---|---|
-| Delta Prestige | `delta-prestige-tower.webp` | Google image results |
-| Hiranandani Fortune City | `hiranandani-fortune-city-tower.webp` | Google image results |
-| Godrej City Panvel | `godrej-city-panvel-towers.webp` | Google image results |
-| Sai World Empire | `sai-world-empire-clubhouse.webp` | Google image results |
-| Meraki | `meraki-panvel-tower.webp` | Google image results |
-| Emporia Hillcrest | `emporia-hillcrest-towers.webp` | Google image results |
+| Project | File | Source | Licence |
+|---|---|---|---|
+| Delta Prestige | `delta-prestige-tower-new.jpg` | [deltaprestige.in](https://deltaprestige.in/) gallery | `developer-artwork` |
+| Hiranandani Fortune City | `hiranandani-fortune-city-tower-new.jpg` | [hiranandanicommunities.com](https://www.hiranandanicommunities.com/) | `developer-artwork` |
+| Godrej City Panvel | `godrej-city-panvel-towers-new.jpg` | Godrej Properties CDN | `developer-artwork` |
+| Sai World Empire | `sai-world-empire-clubhouse-new.jpg` | [paradisegroup.co.in](https://www.paradisegroup.co.in/) | `developer-artwork` |
+| Meraki | `meraki-panvel-tower-new.webp` | [9meraki.in](https://www.9meraki.in/) | `developer-artwork` |
+| Emporia Hillcrest | `emporia-hillcrest-towers-new.jpg` | [emperiahillcrest.com](https://emperiahillcrest.com/) | `developer-artwork` |
 
-Each is tagged `licence: 'placeholder'` in `src/data/projects.js`.
+Previously image-less projects now showing photography:
 
-**The copyright on these belongs to the developer, or to the property portal
-that published them (Housing.com, 99acres, MagicBricks and similar). Shri
-Sidhanath does not own them.** They are here so the client can see the design
-working with real project photography. Publishing them on a live commercial
-site is a genuine infringement risk.
+| Project | File | Source | Licence |
+|---|---|---|---|
+| Symphony, Kharghar | `symphony-kharghar-tower.jpg` | [paradisegroup.co.in](https://www.paradisegroup.co.in/) (Sai Symphony) | `developer-artwork` |
+| Sai Residency, Panvel | `sai-residency-panvel-tower.jpg` | [sairesidency-kharghar.in](https://sairesidency-kharghar.in/) | `developer-artwork` |
+| Grandstand, Khalapur | `grandstand-khalapur-tower.jpg` | 99acres (Persipina project) | `developer-artwork` |
+| Atheletica, Khalapur | `atheletica-khalapur-tower.jpg` | housing.com (Persipina project) | `developer-artwork` |
+| Pavilion, Khalapur | `pavilion-khalapur-tower.jpg` | 99acres (Persipina project) | `developer-artwork` |
 
-`npm run build` prints a warning while any remain. Set `STRICT_ASSETS=1` to turn
-that warning into a build failure once the real assets are in.
+> **Note:** All images are labelled `developer-artwork` and carry an "Illustration" credit in the
+> card UI. They are CGI renders or elevation drawings, not photographs of finished buildings.
+> Confirm channel-partner media rights with the developer before launch as with any artwork.
 
-### How to replace them properly
-The client markets these projects, which usually means the developer will
-supply a media kit to a channel partner on request. That is the correct source:
-official renders, correct for the current phase, cleared for partner use. Ask
-for Delta, Hiranandani, Godrej, Emporia and the Sai World / Meraki developers.
-
-Swap procedure: drop the official file into
-`public/images/portfolio/residential/`, point `image` at it, and change
-`licence: 'placeholder'` to `licence: 'developer-supplied'`.
+The old placeholder `.webp` files remain in `public/images/portfolio/residential/` but are no
+longer referenced by any project entry. They can be deleted once confirmed as no longer needed.
 
 Two images are NOT placeholders and are safe:
 `delta-prestige-courtyard-*.webp` and `delta-prestige-water-garden-*.webp` came

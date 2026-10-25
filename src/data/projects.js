@@ -37,9 +37,11 @@ export const existingProjects = [
     detail:
       'Usable carpet of 826 sq.ft for 2 BHK, and 1108 and 1137 sq.ft for 3 BHK, with tailor-made combinations creating spacious 5 BHK homes.',
     priceFrom: null,
-    image: '/images/portfolio/residential/delta-prestige-tower.webp',
-    imageAlt: 'Delta Prestige, New Panvel: a mid-rise residential tower with a retail plinth.',
-    licence: 'placeholder',
+    image: '/images/portfolio/residential/delta-prestige-tower-new.jpg',
+    imageAlt: 'Delta Prestige, New Panvel: the G+14 tower elevation from the developer\'s gallery.',
+    imageCredit: 'Delta Group',
+    imageSourceUrl: 'https://deltaprestige.in/',
+    licence: 'developer-artwork',
     source: 'instagram',
     verified: true,
     featured: true,
@@ -55,9 +57,11 @@ export const existingProjects = [
     detail:
       'Balcony homes inside a planned township. 2 BHK from 1.25 Cr and 3 BHK from 1.65 Cr, all inclusive.',
     priceFrom: '1.25 Cr*',
-    image: '/images/portfolio/residential/hiranandani-fortune-city-tower.webp',
-    imageAlt: 'Hiranandani Fortune City, Panvel: a tower in the township signature elevation.',
-    licence: 'placeholder',
+    image: '/images/portfolio/residential/hiranandani-fortune-city-tower-new.jpg',
+    imageAlt: 'Hiranandani Fortune City, Panvel: Golden Willows towers in the township.',
+    imageCredit: 'Hiranandani Communities',
+    imageSourceUrl: 'https://www.hiranandanicommunities.com/',
+    licence: 'developer-artwork',
     source: 'instagram',
     verified: true,
     featured: true,
@@ -73,9 +77,11 @@ export const existingProjects = [
     detail:
       'A township address marketed across its phases, including The Highlands, Pavilion at The Highlands and Aerophase.',
     priceFrom: '74.99 Lakh*',
-    image: '/images/portfolio/residential/godrej-city-panvel-towers.webp',
-    imageAlt: 'Godrej City Panvel: a cluster of towers above a landscaped podium at dusk.',
-    licence: 'placeholder',
+    image: '/images/portfolio/residential/godrej-city-panvel-towers-new.jpg',
+    imageAlt: 'Godrej City Panvel: The Highlands tower elevation from the developer.',
+    imageCredit: 'Godrej Properties',
+    imageSourceUrl: 'https://www.godrejproperties.com/',
+    licence: 'developer-artwork',
     source: 'instagram',
     verified: true,
     featured: true,
@@ -86,14 +92,16 @@ export const existingProjects = [
     location: 'Sector 36, opposite CIDCO Valleyshilp, near Swapnapoorti, Kharghar',
     area: 'Kharghar',
     category: 'Residential',
-    developer: null,
+    developer: 'Paradise Group',
     config: null,
     detail:
       'A landmark Kharghar address, positioned opposite CIDCO Valleyshilp in Sector 36.',
     priceFrom: null,
-    image: '/images/portfolio/residential/sai-world-empire-clubhouse.webp',
-    imageAlt: 'Sai World Empire, Kharghar: the domed clubhouse and landscaped central garden.',
-    licence: 'placeholder',
+    image: '/images/portfolio/residential/sai-world-empire-clubhouse-new.jpg',
+    imageAlt: 'Sai World Empire, Kharghar: the clubhouse and landscaped central garden from the developer.',
+    imageCredit: 'Paradise Group',
+    imageSourceUrl: 'https://www.paradisegroup.co.in/',
+    licence: 'developer-artwork',
     source: 'instagram',
     verified: true,
     featured: true,
@@ -108,9 +116,11 @@ export const existingProjects = [
     config: '1 & 2 BHK',
     detail: 'Centrally located, with 45+ amenities. 1 BHK from 40 Lakh and 2 BHK from 67 Lakh.',
     priceFrom: '40 Lakh*',
-    image: '/images/portfolio/residential/meraki-panvel-tower.webp',
-    imageAlt: 'Meraki, Panvel: the tower elevation with its retail frontage.',
-    licence: 'placeholder',
+    image: '/images/portfolio/residential/meraki-panvel-tower-new.webp',
+    imageAlt: 'Meraki (9 Meraki), Panvel: the G+17 tower day elevation.',
+    imageCredit: '9 Meraki',
+    imageSourceUrl: 'https://www.9meraki.in/',
+    licence: 'developer-artwork',
     source: 'instagram',
     verified: true,
     featured: false,
@@ -125,9 +135,11 @@ export const existingProjects = [
     config: '1 & 2 BHK',
     detail: 'Hillside residences. 1 BHK from 42 Lac and 2 BHK from 63 Lac, plus tax.',
     priceFrom: '42 Lac*',
-    image: '/images/portfolio/residential/emporia-hillcrest-towers.webp',
-    imageAlt: 'Emporia Hillcrest, Panvel: stepped towers above a retail plinth.',
-    licence: 'placeholder',
+    image: '/images/portfolio/residential/emporia-hillcrest-towers-new.jpg',
+    imageAlt: 'Emporia Hillcrest, Panvel: the tower elevation from the developer.',
+    imageCredit: 'Emperia Builtcon',
+    imageSourceUrl: 'https://emperiahillcrest.com/',
+    licence: 'developer-artwork',
     source: 'instagram',
     verified: true,
     featured: false,
@@ -208,11 +220,15 @@ export const existingProjects = [
     location: 'Kharghar',
     area: 'Kharghar',
     category: 'Residential',
-    developer: null,
+    developer: 'Paradise Group',
     config: null,
     detail: 'Kharghar residences with a full amenity deck, including a dedicated fitness centre.',
     priceFrom: null,
-    image: null,
+    image: '/images/portfolio/residential/symphony-kharghar-tower.jpg',
+    imageAlt: 'Symphony, Kharghar: the tower elevation from the developer.',
+    imageCredit: 'Paradise Group',
+    imageSourceUrl: 'https://www.paradisegroup.co.in/',
+    licence: 'developer-artwork',
     source: 'instagram',
     verified: true,
     featured: false,
@@ -306,7 +322,22 @@ export function applyRegister(list, entries = registerEntries) {
       });
     }
   }
-  return out;
+  // Apply projectMedia join for register-only projects that applyRegister added
+  // after mergeProjects already ran its own media join.
+  return out.map((project) => {
+    if (project.image) return project; // already has an image — don't overwrite
+    const media = projectMedia[project.reraNumber];
+    return media
+      ? {
+          ...project,
+          image: media.src,
+          imageAlt: media.alt,
+          imageCredit: media.credit,
+          imageSourceUrl: media.sourceUrl,
+          licence: 'developer-artwork',
+        }
+      : project;
+  });
 }
 
 // `registeredProjects` is the inventory as evidenced by the client's posts and
