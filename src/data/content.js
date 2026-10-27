@@ -215,53 +215,9 @@ export const whyPoints = [
 
 export const faqs = [
   {
-    q: 'Why choose Shri Sidhanath as your real estate agent in Panvel?',
-    a: 'We are a MahaRERA-registered consultancy (A52000004595) with our own office in New Panvel, open 9:00 to 22:00 every day, and rated 4.8 on Google from 150 reviews. One desk handles buying, selling, resale, rentals and property management across Panvel, Kharghar, Kamothe, Kalamboli, Taloja and Ulwe.',
-  },
-  {
-    q: 'How does Shri Sidhanath help buyers?',
-    a: 'We begin with your requirement, budget and timeline, then shortlist only what genuinely fits. We arrange site visits, read the technical and legal position of each option with you, negotiate, and stay involved through documentation and handover.',
-  },
-  {
-    q: 'Do you handle resale?',
-    a: 'Yes. Resale is a core part of the practice. We value against real local transactions rather than asking prices, qualify buyers properly, and manage the paperwork through to registration.',
-  },
-  {
-    q: 'Do you handle rentals?',
-    a: 'Yes. We handle residential and commercial leasing, including tenant qualification, agreement drafting support and renewals.',
-  },
-  {
-    q: 'Do you handle commercial property?',
-    a: 'Yes. Shops, retail, office floors, godowns, industrial units and industrial plots, alongside our residential work.',
-  },
-  {
-    q: 'Do you work with land and plots?',
-    a: 'Yes. We work on land and plotted development, including branded land products. Title, zoning and approvals are examined before anything is recommended.',
-  },
-  {
     q: 'Which locations do you cover?',
     a: 'Mumbai, Navi Mumbai, Thane, Raigad and Pune. Our deepest coverage is the Panvel node, where we are based, along with Kharghar, Kamothe, Kalamboli, Taloja and Ulwe.',
   },
-  {
-    q: 'Do you provide property management?',
-    a: 'Yes. Tenancy administration, upkeep coordination, inspections and society liaison, which suits owners who are not living locally.',
-  },
-  {
-    q: 'Can I schedule a site visit?',
-    a: 'Yes. Call or message us on WhatsApp and we will arrange a visit at a time that works for you, including weekends.',
-  },
-  {
-    q: 'How can I contact Shri Sidhanath?',
-    a: 'Call or WhatsApp 8065532578, email us, or visit the office at Plot 18, Sector 7, New Panvel West. We reply to every enquiry.',
-  },
-  // The entries below are written as direct, specific, snippet-ready answers —
-  // the kind an AI Overview, ChatGPT or Perplexity can quote verbatim without
-  // needing to visit another page. Added 2026-10-06 for AEO/GEO coverage.
-  // Grounded in the same MahaRERA number, rating and address already on the
-  // page, plus the business's own Google Business Profile review replies
-  // (pulled via OpenSEO, 2026-10-06) where Ravi Sargar and team describe
-  // handling flat registration, stamp duty and NMIA-adjacent requirements —
-  // see docs/GBP-CHECKLIST.md for the source reviews.
   {
     q: 'Is Shri Sidhanath MahaRERA registered?',
     a: 'Yes. Shri Sidhanath Constructions & Estate Consultant is registered with MahaRERA under agent registration number A52000004595. A MahaRERA agent number means the agent is on the state regulator\'s public register and can be looked up on maharera.maharashtra.gov.in before you deal with them.',
