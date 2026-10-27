@@ -7,7 +7,6 @@ import './Footer.css';
 
 const MAIN = [
   { label: 'About', href: '#about' },
-  { label: 'Services', href: '#services' },
   { label: 'Projects', href: '#listings' },
   { label: 'Locations', href: '#locations' },
   { label: 'All projects', href: '/projects.html' },

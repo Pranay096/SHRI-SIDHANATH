@@ -5,7 +5,6 @@ import './FloatingNav.css';
 const LINKS = [
   { label: 'Home', href: '#top' },
   { label: 'About', href: '#about' },
-  { label: 'Services', href: '#services' },
   { label: 'Projects', href: '#listings' },
   { label: 'Locations', href: '#locations' },
   { label: 'FAQ', href: '#faq' },

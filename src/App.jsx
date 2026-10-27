@@ -5,8 +5,6 @@ import Intro from './components/Intro';
 import ScrollProgress from './components/ScrollProgress';
 import Hero from './sections/Hero';
 import About from './sections/About';
-import Services from './sections/Services';
-import Why from './sections/Why';
 import Proof from './sections/Proof';
 import Shortlist from './sections/Shortlist';
 import Process from './sections/Process';
@@ -30,7 +28,7 @@ import { initHeroScroll } from './lib/heroScroll';
  *   testimonials   ->             the marketed-projects list, on one full-screen page
  *   blog grid      -> Locations   the markets, in the same card grid
  *
- * Everything else — banner, about, services ladder, dark why-us band, listings,
+ * Everything else — banner, about, listings,
  * process bars, featured deck, FAQ, masked wordmark, footer — maps one to one.
  */
 export default function App() {
@@ -94,8 +92,6 @@ export default function App() {
         {/* One opaque sheet, so the parked hero and about are covered rather than showing
             through every transparent band that follows it. */}
         <div className="sheet" ref={sheet}>
-          <Services />
-          <Why />
           <Process />
           <Faq />
           <Locations />
